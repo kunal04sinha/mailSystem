@@ -12,15 +12,15 @@ const sendMail = {
         pass: SMTP_PASS,
       },
     });
-    const { name, email, message } = req.body;
+    const { firstName, lastName, email, phone, message } = req.body;
     const mailOptions = {
       from: {
         name: "CloudArcOps",
         address: email,
       },
       to: [SMTP_USER],
-      subject: `Contact form submission from ${name}`,
-      text: `Name: ${name}\nE-mail: ${email}\nMessage: ${message}`,
+      subject: `Contact form submission from ${firstName}`,
+      text: `Name: ${firstName} ${lastName}\nE-mail: ${email}\nPhone Number:${phone}\nMessage: ${message}`,
     };
 
     transporter.sendMail(mailOptions, (error, info) => {
