@@ -18,7 +18,7 @@ const sendMail = {
         name: "CloudArcOps",
         address: email,
       },
-      to: [SMTP_USER],
+      to: email,
       subject: `Contact form submission from ${firstName}`,
       text: `Name: ${firstName} ${lastName}\nE-mail: ${email}\nPhone Number:${phone}\nMessage: ${message}`,
     };
